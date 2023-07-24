@@ -26,6 +26,7 @@ const ItemContainer = styled(Box)`
 const TextBox = styled(Typography)`
     width:50%;
     margin:0 50px;
+    text-align:justify;
 `;
 
 const Heading = styled(Typography)`

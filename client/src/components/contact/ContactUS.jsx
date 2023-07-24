@@ -2,6 +2,9 @@ import {Box,Typography,styled, TextField, Button} from "@mui/material";
 
 import { useState, useEffect } from "react";
 
+//axios
+import axios from "axios";
+
 const Container = styled(Box)`
     margin:100px 100px;
 `;
@@ -39,6 +42,7 @@ const ContactUs = ()=>{
     const onValueChange = (e)=>{
         setContact({...contact, [e.target.name]: e.target.value})
     }
+    console.log(contact);
     useEffect(() => {
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
@@ -48,11 +52,19 @@ const ContactUs = ()=>{
         if (window.location.href.lastIndexOf('#') > 0) {
           document.getElementById(href)?.scrollIntoView();
         }
-       });
+       }, []);
 
-    // const contact = ()=>{
-
-    // }
+    const contactUs = async()=>{
+        let result = await fetch("http://localhost:8000/contact",{
+            method:"post",
+            body:JSON.stringify(contact),
+            headers:{
+                'Content-Type':"application/json"
+            }
+        });
+        alert("Your query has been reported successfully");
+        result = await result.json();
+    }
 
     return(
         <Container data-aos="fade-in">
@@ -64,7 +76,7 @@ const ContactUs = ()=>{
                 <input type="text" className="userInput" placeholder="City" name="city" onChange={(e)=>onValueChange(e)}></input>
                 <textarea  className="userQuery" rows={5} placeholder="Your query" name="query" onChange={(e)=>onValueChange(e)}></textarea>
                 <br />
-                <ButtonLearn variant="contained">Contact Us</ButtonLearn>
+                <ButtonLearn variant="contained" onClick={()=>contactUs()}>Contact Us</ButtonLearn>
             </div>
         </Container>
 

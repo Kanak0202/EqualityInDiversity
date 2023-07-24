@@ -42,7 +42,7 @@ const Mission = ()=>{
             Our goal is to provide a safe and supportive space for meaningful conversations, constructive discussions, and the sharing of diverse perspectives. We aim to empower individuals to become advocates for social equality and to take action towards creating a more just and equitable world.
             </Text>
             <Text data-aos="zoom-in">
-            Together, let's stand united in the pursuit of a society where every person's rights, opportunities, and contributions are valued and celebrated. Join us in the journey towards embracing diversity, empowering unity, and building a brighter future for all
+            Together, let's stand united in the pursuit of a society where every person's rights, opportunities, and contributions are valued and celebrated. Join us in the journey towards embracing diversity, empowering unity, and building a brighter future for all.
             </Text>
         </Container>
     );
