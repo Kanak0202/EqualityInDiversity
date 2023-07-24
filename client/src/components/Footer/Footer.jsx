@@ -67,7 +67,7 @@ const Footer = ()=>{
     return(
         <MainContainer>
             <Container>
-        <img src={logo} alt="logo"></img>
+        <img src={logo} alt="logo" data-aos="zoom-out" data-aos-duration="5000"></img>
             <QuickLinks>Quick Links</QuickLinks>
             <LinkBox>
                 <LinksHeading>

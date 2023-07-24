@@ -3,6 +3,11 @@ import { Box, Typography, styled } from "@mui/material";
 //data
 import developmentData from "../../constants/developmentData";
 
+//aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const Text = styled(Typography)`
     font-size:25px;
     color:white;
@@ -36,6 +41,9 @@ const Organisation = styled(Typography)`
 `;
 
 const RecentDevelopments = () => {
+  useEffect(()=>{
+    AOS.init({duration:1500});
+  })
   return (
     <Box id="recent">
       <Heading>Recent Developments</Heading>
@@ -45,19 +53,19 @@ const RecentDevelopments = () => {
             <ItemContainer key={index}>
               {index % 2 === 0 ? (
                 <>
-                  <img src={item.imgUrl} alt={item.organisation} />
-                  <TextBox>
+                  <img src={item.imgUrl} alt={item.organisation} data-aos="fade-right" />
+                  <TextBox data-aos="fade-left" >
                   <Organisation>{item.organisation}</Organisation>
                     <Text>{item.text}</Text>
                   </TextBox>
                 </>
               ) : (
                 <>
-                  <TextBox>
+                  <TextBox data-aos="fade-right">
                   <Organisation>{item.organisation}</Organisation>
                     <Text>{item.text}</Text>
                   </TextBox>
-                  <img src={item.imgUrl} alt={item.organisation} />
+                  <img src={item.imgUrl} alt={item.organisation} data-aos="fade-left" />
                 </>
               )}
             </ItemContainer>

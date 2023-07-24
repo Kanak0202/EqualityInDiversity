@@ -84,7 +84,7 @@ const Home = () => {
   return (
     <Box>
       <S1Container>
-      <ColorImage className="backGroundImg">
+      <ColorImage className="backGroundImg" data-aos="fade-right">
         <Heading>EqualityInDiversity</Heading>
         <SubHeading>Embracing Diversity, Empowering Unity.</SubHeading>
         <ButtonBox>
@@ -94,7 +94,7 @@ const Home = () => {
         </ButtonBox>
 
       </ColorImage>
-      <TreeImage src={Tree} alt="diverse tree" />
+      <TreeImage src={Tree} alt="diverse tree" data-aos="fade-left"/>
     </S1Container>
     <AllAreOne />
     <Stats />

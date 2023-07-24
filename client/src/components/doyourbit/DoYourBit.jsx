@@ -6,6 +6,11 @@ import handImg from "../../images/doYourBit/rise.jpg"
 //data
 import doYourBitData from "../../constants/doBit";
 
+//aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const Container = styled(Box)`
     margin:100px 100px;
 `;
@@ -56,15 +61,18 @@ const BitBox = styled(Box)`
 `;
 
 const DoYourBit = ()=>{
+    useEffect(()=>{
+        AOS.init({duration:1900});
+    })
     return(
         <Container id="dobit">
             <Heading>#DO_YOUR_BIT</Heading>
             <DoContainer>
-                <HandImage src={handImg} alt="handimage" />
+                <HandImage src={handImg} alt="handimage" data-aos="zoom-in"/>
                 <Box>
                     {doYourBitData.map((item, index)=>{
                         return(
-                            <BitBox>
+                            <BitBox data-aos="flip-right">
                                 <Organisation>{item.title}</Organisation>
                                 {/* <Text>{item.description}</Text> */}
                                 {/* <a href={item.link}>Read More</a> */}

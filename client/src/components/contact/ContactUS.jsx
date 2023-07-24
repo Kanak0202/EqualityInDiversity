@@ -55,7 +55,7 @@ const ContactUs = ()=>{
     // }
 
     return(
-        <Container>
+        <Container data-aos="fade-in">
         <Heading>Share with us</Heading>
             <div className="contactForm">
                 <input type="text" className="userInput" placeholder="Name" name="name" onChange={(e)=>onValueChange(e)}></input>

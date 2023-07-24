@@ -4,6 +4,11 @@ import { Typography, Box, styled } from "@mui/material";
 //data
 import data from "../../constants/statData";
 
+//aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const CardContainer = styled(Box)`
     ${'' /* border:2px solid white; */}
     display:flex;
@@ -49,14 +54,18 @@ const Figure = styled(Typography)`
     
 `;
 
+
 const Stats = ()=>{
+    useEffect(()=>{
+        AOS.init({duration:2000});
+    },[])
     return (
         <Box id="stats">
             <Heading>Stats on equality</Heading>
             <CardContainer>
             {data.map(item =>{
                 return(
-                    <SingleCard>
+                    <SingleCard data-aos="fade-up" data-aos-duration="2500">
                     <Text>{item.upperText}</Text>
                     <Figure>{item.figure}</Figure>
                     <Text>{item.lowerText}</Text>

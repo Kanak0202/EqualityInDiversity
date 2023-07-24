@@ -4,6 +4,11 @@ import { Box, Typography } from "@mui/material";
 //image
 import AllOneSecImage from "../../images/AllOneSection/Frame 3iii.png";
  
+//aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
 const AllOneSection = styled(Box)`
     margin-top:200px;
     color:white;
@@ -25,11 +30,14 @@ const ImageContainer = styled(Box)`
 `;
 
 const AllAreOne = ()=>{
+    useEffect(()=>{
+        AOS.init({duration:2000});
+    })
     return(
         <AllOneSection id="allone">
             <Text>#WE_ALL_ARE_ONE</Text>
             <ImageContainer>
-            <img src={AllOneSecImage} alt="alloneimg" />
+            <img src={AllOneSecImage} alt="alloneimg" data-aos="zoom-in"/>
             </ImageContainer>
         </AllOneSection>
     );

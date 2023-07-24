@@ -5,6 +5,10 @@ import { useEffect } from "react";
 import reportdata from "../../constants/reportData";
 import { Link } from "react-router-dom";
 
+//aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Container = styled(Box)`
     margin:100px 100px;
 `;
@@ -53,6 +57,7 @@ const ReportsBox = styled(Box)`
 
 const Report = ()=>{
     useEffect(() => {
+        AOS.init({duration:1500});
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
         const href = window.location.href.substring(
@@ -69,7 +74,7 @@ const Report = ()=>{
             <ReportsBox>
                 {reportdata.map((item, index)=>{
                     return(
-                        <ReportContainer key={index}>
+                        <ReportContainer key={index} data-aos="fade-in">
                             <TitleContainer>
                                 <Text>{index + 1}</Text>
                                 <Text>{item.title}</Text>
