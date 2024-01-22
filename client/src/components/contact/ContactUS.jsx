@@ -55,7 +55,7 @@ const ContactUs = ()=>{
        }, []);
 
     const contactUs = async()=>{
-        let result = await fetch("http://localhost:8000/contact",{
+        let result = await fetch("https://equalityindiversity.onrender.com/contact",{
             method:"post",
             body:JSON.stringify(contact),
             headers:{
